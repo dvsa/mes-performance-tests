@@ -16,7 +16,7 @@ class JournalNoRampup extends Simulation {
   val csvFeeder = csv("users.csv").circular
 
   //setting authorisation token --Temporary Solution--
-  private val token = "token"
+  private val token = System.getenv("AD_JWT_TOKEN")
   val headers_10 = Map("Content-Type" -> """application/json""", "Authorization" -> token)
 
   //values for scenario
