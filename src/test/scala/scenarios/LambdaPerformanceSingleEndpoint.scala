@@ -28,11 +28,11 @@ class LambdaPerformanceSingleEndpoint extends Simulation {
   // values for setUp phase
   private val waitTime = 1
   // wait before scenario ends (seconds)
-  private val maxUsers = 15
+  private val maxUsers = 1
   // max users used at once in scenario
   private val rampUpDuration = 15
   // time to ramp up users to full capacity (seconds)
-  private val maxDuration = 300 // duration of test run (seconds)
+  private val maxDuration = 60 // duration of test run (seconds)
 
   val httpProtocol: HttpProtocolBuilder = http
     .baseUrl(baseUrl)
