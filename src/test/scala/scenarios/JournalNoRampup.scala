@@ -46,7 +46,7 @@ class JournalNoRampup extends Simulation {
 
   val scn2: ScenarioBuilder = scenario("Get_Journal2")
     .feed(csvFeeder)
-    .exec(http("Dupa")
+    .exec(http("Error_CSV")
       .get("${user}")
       .headers(headers_10)
       .check(status.is(200)))
