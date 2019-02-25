@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="gatling-maven-plugin-demo" />
+        <module name="mes-performance-tests" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="gatling-maven-plugin-demo" target="1.8" />
+      <module name="mes-performance-tests" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

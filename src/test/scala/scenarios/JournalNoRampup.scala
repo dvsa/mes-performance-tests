@@ -20,7 +20,7 @@ class JournalNoRampup extends Simulation {
   val headers_10 = Map("Content-Type" -> """application/json""", "Authorization" -> token)
 
   //values for scenario
-  private val baseUrl = "https://tom.mes.dev-dvsacloud.uk/v1/journals/"
+  private val baseUrl = System.getenv("BASE_URL")
   private val uri = baseUrl + "01234567/personal"
   private val uri2 = baseUrl + "67128492/personal"
   private val contentType = "application/json"
@@ -28,7 +28,7 @@ class JournalNoRampup extends Simulation {
   //values for setUp phase
   private val staticRequestCount = 2
   private val waitTime = 5
-  private val maxDuration = 30
+  private val maxDuration = System.getenv("JOB_DURATION")
 
   val httpProtocol: HttpProtocolBuilder = http
     .baseUrl(baseUrl)
@@ -41,15 +41,15 @@ class JournalNoRampup extends Simulation {
     .exec(http("Get_Journal")
       .get(uri)
       .headers(headers_10)
-      .check(status.is(403)))
+      .check(status.is(200)))
     .pause(Duration.apply(waitTime, TimeUnit.SECONDS))
 
   val scn2: ScenarioBuilder = scenario("Get_Journal2")
     .feed(csvFeeder)
     .exec(http("Error_CSV")
-      .get("${user}")
+      .get(baseUrl + "${user}")
       .headers(headers_10)
-      .check(status.is(403)))
+      .check(status.is(200)))
     .pause(Duration.apply(waitTime, TimeUnit.SECONDS))
 
   //Setup for users and maximum run time values
