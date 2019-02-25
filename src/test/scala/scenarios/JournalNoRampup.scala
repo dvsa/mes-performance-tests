@@ -41,7 +41,8 @@ class JournalNoRampup extends Simulation {
       .exec(http("Get_Journal")
       .get(uri)
       .headers(headers_10)
-      .check(status.is(200)))
+      .check(status.is(200),
+        substring("staffNumber")))
     .pause(Duration.apply(waitTime, TimeUnit.SECONDS))
 
   val scn2: ScenarioBuilder = scenario("Get_Journal2")
@@ -49,7 +50,8 @@ class JournalNoRampup extends Simulation {
       .exec(http("Error_CSV")
       .get(baseUrl + "${user}")
       .headers(headers_10)
-      .check(status.is(200)))
+      .check(status.is(200),
+        substring("staffNumber")))
     .pause(Duration.apply(waitTime, TimeUnit.SECONDS))
 
   //Setup for users and maximum run time values
@@ -62,4 +64,7 @@ class JournalNoRampup extends Simulation {
       .inject(
         nothingFor(waitTime),
         atOnceUsers(maxUsers)))
+    .assertions(
+      global.responseTime.max.lt(2000),
+      global.successfulRequests.percent.gt(90))
     .maxDuration(FiniteDuration.apply(maxDuration, TimeUnit.SECONDS))}

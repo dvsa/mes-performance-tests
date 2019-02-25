@@ -52,7 +52,7 @@ class LambdaPerformanceSingleEndpoint extends Simulation {
       // checks status
       .check(status.is(200),
       // checks if response body contains "testSlot"
-      substring("testSlot")))
+      substring("staffNumber")))
       // wait before loop ends
       .pause(Duration.apply(waitTime, TimeUnit.SECONDS))
   }
@@ -65,6 +65,6 @@ setUp(scn
     heavisideUsers(maxUsers) during rampUpDuration))
   .assertions(
     global.responseTime.max.lt(2000),
-    global.successfulRequests.percent.gt(90))
+    global.successfulRequests.percent.gt(95))
   .maxDuration(FiniteDuration.apply(maxDuration, TimeUnit.SECONDS))
 }
