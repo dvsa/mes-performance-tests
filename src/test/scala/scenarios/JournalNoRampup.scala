@@ -59,5 +59,4 @@ class JournalNoRampup extends Simulation {
     scn2.
       inject(nothingFor(waitTime),
         atOnceUsers(staticRequestCount)))
-    .maxDuration(FiniteDuration.apply(maxDuration, TimeUnit.SECONDS))
 }

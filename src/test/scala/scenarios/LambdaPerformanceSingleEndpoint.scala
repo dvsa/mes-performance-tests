@@ -7,7 +7,6 @@ import io.gatling.core.Predef._
 import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
 import io.gatling.http.protocol.HttpProtocolBuilder
-
 import scala.concurrent.duration.{Duration, FiniteDuration}
 
 
@@ -64,6 +63,6 @@ class LambdaPerformanceSingleEndpoint extends Simulation {
     scn.
       inject(
         heavisideUsers(maxUsers) during rampUpDuration))
-    .maxDuration(FiniteDuration.apply(maxDuration, TimeUnit.SECONDS))
+    .maxDuration(maxDuration, TimeUnit.SECONDS)
 
 }
