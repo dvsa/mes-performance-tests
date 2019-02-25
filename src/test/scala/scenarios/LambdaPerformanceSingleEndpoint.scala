@@ -27,7 +27,7 @@ class LambdaPerformanceSingleEndpoint extends Simulation {
   // wait before scenario ends (seconds)
   private val waitTime = 1
   // max users used at once in scenario
-  private val maxUsers = 10
+  private val maxUsers = 2
   // time to ramp up users to full capacity (seconds)
   private val rampUpDuration = 10
   // duration of test run (seconds)
@@ -45,9 +45,9 @@ class LambdaPerformanceSingleEndpoint extends Simulation {
     .forever("Get Journal", exitASAP = true) {
     // loads values from csv
     feed(csvUser)
-    exec(http("Get_" + "${user}")
+    exec(http("Get_" + """${user}""")
       // get on url with endpoint from feeder
-      .get(baseUrl + "${user}")
+      .get(baseUrl + """${user}""")
       // sets headers
       .headers(headers)
       // checks status
