@@ -27,11 +27,11 @@ class LambdaPerformanceSingleEndpoint extends Simulation {
   // wait before scenario ends (seconds)
   private val waitTime = 1
   // max users used at once in scenario
-  private val maxUsers = 2
+  private val maxUsers = System.getenv("NO_USERS").toInt
   // time to ramp up users to full capacity (seconds)
-  private val rampUpDuration = 10
+  private val rampUpDuration = System.getenv("RAMP_UP_TIME").toInt
   // duration of test run (seconds)
-  private val maxDuration = 180
+  private val maxDuration = System.getenv("JOB_DURATION").toInt
 
   val httpProtocol: HttpProtocolBuilder = http
     .baseUrl(baseUrl)
@@ -62,5 +62,6 @@ class LambdaPerformanceSingleEndpoint extends Simulation {
   // setUp section allows to change ramp up and sets maximum duration of the test
   // max number of users achieved in set amount of time then simulation runs on loop until maxDuration expires
 setUp(scn
-  .inject(atOnceUsers(maxUsers))).maxDuration(maxDuration)
+  .inject(heavisideUsers(maxUsers) during rampUpDuration))
+  .maxDuration(FiniteDuration.apply(maxDuration, TimeUnit.SECONDS))
 }
