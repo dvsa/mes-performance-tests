@@ -17,8 +17,9 @@ class LambdaPerformanceSingleEndpoint extends Simulation {
   val headers = Map("Content-Type" -> """application/json""", "Authorization" -> token)
 
   //values for scenario
-  private val baseUrl = System.getenv("BASE_URL")
   // "https://dev.mes.dev-dvsacloud.uk/v1/"
+  private val baseUrl = System.getenv("BASE_URL")
+  private val user1 = "journals/01234567/personal"
   private val contentType = "application/json" // content type for httpProtocol
 
   // values for setUp phase
@@ -45,9 +46,9 @@ class LambdaPerformanceSingleEndpoint extends Simulation {
     .forever("Get Journal", exitASAP = true) {
     // loads values from csv
     feed(csvUser)
-    exec(http("Get_" + """${user}""")
+    exec(http("Get_" + user1)
       // get on url with endpoint from feeder
-      .get(baseUrl + """${user}""")
+      .get(baseUrl + user1)
       // sets headers
       .headers(headers)
       // checks status
