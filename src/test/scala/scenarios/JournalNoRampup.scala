@@ -42,7 +42,7 @@ class JournalNoRampup extends Simulation {
       .get(uri)
       .headers(headers_10)
       .check(status.is(200),
-        substring("staffNumber")))
+        substring("examinerName")))
     .pause(Duration.apply(waitTime, TimeUnit.SECONDS))
 
   val scn2: ScenarioBuilder = scenario("Get_Journal2")
@@ -51,7 +51,7 @@ class JournalNoRampup extends Simulation {
       .get(baseUrl + "${user}")
       .headers(headers_10)
       .check(status.is(200),
-        substring("staffNumber")))
+        substring("examinerName")))
     .pause(Duration.apply(waitTime, TimeUnit.SECONDS))
 
   //Setup for users and maximum run time values

@@ -52,7 +52,7 @@ class LambdaPerformanceSingleEndpoint extends Simulation {
       // checks status
       .check(status.is(200),
       // checks if response body contains "testSlot"
-      substring("staffNumber")))
+      substring("examinerName")))
       // wait before loop ends
       .pause(Duration.apply(waitTime, TimeUnit.SECONDS))
   }
