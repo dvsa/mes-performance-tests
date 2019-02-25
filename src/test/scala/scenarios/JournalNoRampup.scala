@@ -26,9 +26,9 @@ class JournalNoRampup extends Simulation {
   private val contentType = "application/json"
 
   //values for setUp phase
-  private val staticRequestCount = 2
+  private val maxUsers = System.getenv("NO_USERS").toInt
   private val waitTime = 5
-  private val maxDuration = System.getenv("JOB_DURATION")
+  private val maxDuration = System.getenv("JOB_DURATION").toInt
 
   val httpProtocol: HttpProtocolBuilder = http
     .baseUrl(baseUrl)
@@ -37,26 +37,29 @@ class JournalNoRampup extends Simulation {
     .contentTypeHeader(contentType)
 
   val scn: ScenarioBuilder = scenario("Get_Journal")
-      .feed(csvFeeder)
-    .exec(http("Get_Journal")
+    feed(csvFeeder)
+      .exec(http("Get_Journal")
       .get(uri)
       .headers(headers_10)
       .check(status.is(200)))
     .pause(Duration.apply(waitTime, TimeUnit.SECONDS))
 
   val scn2: ScenarioBuilder = scenario("Get_Journal2")
-    .feed(csvFeeder)
-    .exec(http("Error_CSV")
+    feed(csvFeeder)
+      .exec(http("Error_CSV")
       .get(baseUrl + "${user}")
       .headers(headers_10)
       .check(status.is(200)))
     .pause(Duration.apply(waitTime, TimeUnit.SECONDS))
 
   //Setup for users and maximum run time values
-  setUp(scn.
-    inject(nothingFor(waitTime),
-      atOnceUsers(staticRequestCount)),
-    scn2.
-      inject(nothingFor(waitTime),
-        atOnceUsers(staticRequestCount)))
-}
+  setUp(
+    scn
+      .inject(
+        nothingFor(waitTime),
+        atOnceUsers(maxUsers)),
+    scn2
+      .inject(
+        nothingFor(waitTime),
+        atOnceUsers(maxUsers)))
+    .maxDuration(FiniteDuration.apply(maxDuration, TimeUnit.SECONDS))}

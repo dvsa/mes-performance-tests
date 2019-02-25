@@ -61,6 +61,10 @@ class LambdaPerformanceSingleEndpoint extends Simulation {
   // setUp section allows to change ramp up and sets maximum duration of the test
   // max number of users achieved in set amount of time then simulation runs on loop until maxDuration expires
 setUp(scn
-  .inject(heavisideUsers(maxUsers) during rampUpDuration))
+  .inject(
+    heavisideUsers(maxUsers) during rampUpDuration))
+  .assertions(
+    global.responseTime.max.lt(2000),
+    global.successfulRequests.percent.gt(90))
   .maxDuration(FiniteDuration.apply(maxDuration, TimeUnit.SECONDS))
 }
