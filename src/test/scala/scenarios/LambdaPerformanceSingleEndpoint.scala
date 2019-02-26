@@ -64,7 +64,7 @@ setUp(scn
   .inject(
     heavisideUsers(maxUsers) during rampUpDuration))
   .assertions(
-    global.responseTime.max.lt(2000),
+    global.responseTime.max.lt(3000),
     global.successfulRequests.percent.gt(95))
   .maxDuration(FiniteDuration.apply(maxDuration, TimeUnit.SECONDS))
 }
