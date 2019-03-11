@@ -11,7 +11,7 @@ import io.gatling.http.protocol.HttpProtocolBuilder
 import scala.concurrent.duration.{Duration, FiniteDuration}
 
 
-class loggingService extends Simulation {
+class LoggingService extends Simulation {
 
   //setting authorisation token --Temporary Solution--
   private val token = System.getenv("AD_JWT_TOKEN")
@@ -26,7 +26,8 @@ class loggingService extends Simulation {
   private val contentType = "application/json"
   //values for setUp phase
   private val maxUsers = System.getenv("NO_USERS").toInt
-  private val waitTime = 5
+  private val maxDuration = System.getenv("JOB_DURATION").toInt
+  private val waitTime = 1
 
   val httpProtocol: HttpProtocolBuilder = http
     .baseUrl(baseUrl)
@@ -39,10 +40,9 @@ class loggingService extends Simulation {
     .exec(http("Send_Logs")
       .post(uri)
       .headers(headers_10)
-      .body("${logs}")
+      .body(StringBody("${logs}"))
       .check(status.is(200)))
     .pause(Duration.apply(waitTime, TimeUnit.SECONDS))
-  private val maxDuration = System.getenv("JOB_DURATION").toInt
 
   //Setup for users and maximum run time values
   setUp(

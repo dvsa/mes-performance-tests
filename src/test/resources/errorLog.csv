@@ -1,6 +1,5 @@
 ﻿logs
-"  logs: [
-    {
+"   {
       type: 'info',
       message: 'DE with id: undefined - [JournalPage] Load Journal',
       timestamp: 1551438397852
@@ -180,9 +179,8 @@
       message: 'DE with id: undefined - [JournalEffect] Load Journal Silent',
       timestamp: 1551438504806
     }
-  ],"
-"  logs: [
-    {
+"
+"   {
       type: 'info',
       message: 'DE with id: undefined - [JournalPage] Load Journal',
       timestamp: 1551438397852
@@ -362,4 +360,4 @@
       message: 'DE with id: undefined - [JournalEffect] Load Journal Silent',
       timestamp: 1551438504806
     }
-  ],"
+"
