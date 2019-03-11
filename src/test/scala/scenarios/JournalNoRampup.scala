@@ -13,12 +13,12 @@ import scala.concurrent.duration.{Duration, FiniteDuration}
 
 class JournalNoRampup extends Simulation {
 
+  //setting authorisation token --Temporary Solution--
+  private val token = System.getenv("AD_JWT_TOKEN")
   // csv feeder currently not working csv file stored in test/resources
   val csvFeeder = csv("users.csv").circular
   val headers_10 = Map("Content-Type" -> """application/json""", "Authorization" -> token)
 
-  //setting authorisation token --Temporary Solution--
-  private val token = System.getenv("AD_JWT_TOKEN")
 
   //values for scenario
   private val baseUrl = System.getenv("BASE_URL")
