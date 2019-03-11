@@ -44,7 +44,7 @@ class LambdaPerformanceSingleEndpoint extends Simulation {
     .forever("Get Journal", exitASAP = true) {
     // loads values from csv
     feed(csvUser)
-      .exec(http("Get_" + "${user}")
+      .exec(http("Get_Journal")
       // get on url with endpoint from feeder
       .get(baseUrl + "${user}")
       // sets headers
