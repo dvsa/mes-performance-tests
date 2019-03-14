@@ -62,9 +62,9 @@ class LambdaPerformanceSingleEndpoint extends Simulation {
   // max number of users achieved in set amount of time then simulation runs on loop until maxDuration expires
 setUp(scn
   .inject(
+    nothingFor(5),
     heavisideUsers(maxUsers) during rampUpDuration))
   .assertions(
-    global.responseTime.max.lt(3000),
     global.successfulRequests.percent.gt(95))
   .maxDuration(FiniteDuration.apply(maxDuration, TimeUnit.SECONDS))
 }

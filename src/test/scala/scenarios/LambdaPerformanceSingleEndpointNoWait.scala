@@ -63,6 +63,7 @@ class LambdaPerformanceSingleEndpointNoWait extends Simulation {
   // max number of users achieved in set amount of time then simulation runs on loop until maxDuration expires
 setUp(scn
   .inject(
+    nothingFor(5),
     rampConcurrentUsers(0) to(maxUsers) during(rampUpDuration)))
   .assertions(
     global.successfulRequests.percent.gt(95))

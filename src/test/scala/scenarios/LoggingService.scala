@@ -51,7 +51,6 @@ class LoggingService extends Simulation {
         nothingFor(waitTime),
         atOnceUsers(maxUsers)))
     .assertions(
-      global.responseTime.max.lt(2000),
       global.successfulRequests.percent.gt(90))
     .maxDuration(FiniteDuration.apply(maxDuration, TimeUnit.SECONDS))
 }
