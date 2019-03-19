@@ -37,7 +37,7 @@ class LoggingService extends Simulation {
 
   val scn: ScenarioBuilder = scenario("Send_Logs")
       .forever("Send_Logs", exitASAP = true) {
-          .exec(http("Send_Logs")
+          exec(http("Send_Logs")
             .post(uri)
             .headers(headers_10)
           .body(StringBody("""[{"type": "info","message": "DE with id: 47182032 - [JournalPage] Load Journal Test","timestamp": 1552994170000}]"""))
