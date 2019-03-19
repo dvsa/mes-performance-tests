@@ -41,7 +41,7 @@ class ConfigurationService extends Simulation {
         .get(uri)
         .headers(headers_10)
         .check(status.is(200),
-          substring("journalUrl)))
+          substring("journalUrl")))
     }
 
 
