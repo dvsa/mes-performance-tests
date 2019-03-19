@@ -17,7 +17,7 @@ class LoggingService extends Simulation {
   private val token = System.getenv("AD_JWT_TOKEN")
 
   // csv feeder currently not working csv file stored in test/resources
-  val errorLog = ssv("errorLog.csv").circular
+  val errorLog = csv("errorLog.csv").circular
   val headers_10 = Map("Content-Type" -> """application/json""", "Authorization" -> token)
 
   //values for scenario
