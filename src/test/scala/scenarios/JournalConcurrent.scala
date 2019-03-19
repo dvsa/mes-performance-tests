@@ -12,7 +12,7 @@ import io.gatling.http.protocol.HttpProtocolBuilder
 import scala.concurrent.duration.{Duration, FiniteDuration}
 
 
-class LambdaPerformanceSingleEndpointNoWait extends Simulation {
+class JournalConcurrent extends Simulation {
 
   //setting authorisation token --Temporary Solution--
   private val token = System.getenv("AD_JWT_TOKEN")
