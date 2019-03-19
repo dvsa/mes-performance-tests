@@ -54,3 +54,4 @@ class LoggingService extends Simulation {
       global.successfulRequests.percent.gt(95))
     .maxDuration(FiniteDuration.apply(maxDuration, TimeUnit.SECONDS))
 }
+
