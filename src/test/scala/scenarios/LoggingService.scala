@@ -36,13 +36,15 @@ class LoggingService extends Simulation {
     .contentTypeHeader(contentType)
 
   val scn: ScenarioBuilder = scenario("Send_Logs")
-  feed(errorLog)
-    .exec(http("Send_Logs")
-      .post(uri)
-      .headers(headers_10)
-      .body(StringBody("${logs}"))
-      .check(status.is(200)))
-    .pause(Duration.apply(waitTime, TimeUnit.SECONDS))
+      .forever("Send_Logs", exitASAP = true) {
+        feed(errorLog)
+          .exec(http("Send_Logs")
+            .post(uri)
+            .headers(headers_10)
+            .body(StringBody("[" + "${logs}" + "]"))
+            .check(status.is(200)))
+      }
+
 
   //Setup for users and maximum run time values
   setUp(

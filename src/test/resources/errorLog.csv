@@ -1,363 +1,40 @@
 ﻿logs
-"   {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Load Journal',
-      timestamp: 1551438397852
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalEffects] Load Journal Success',
-      timestamp: 1551438398085
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [CandidateDetailsPage] Candidate details view did enter',
-      timestamp: 1551438403935
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Load Journal',
-      timestamp: 1551438404771
-    },
-    {
-      type: 'error',
-      message: 'DE with id: undefined - [JournalEffects] Load Journal Failure',
-      timestamp: 1551438404844
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438406932
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438407358
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438408626
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438408773
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438410602
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438411201
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438411661
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438412977
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438413305
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438413468
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438414805
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438414961
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438415125
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438416258
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438416414
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438416569
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438424122
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438424262
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438424541
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalEffect] Load Journal Silent',
-      timestamp: 1551438424778
-    },
-    {
-      type: 'warning',
-      message: 'DE with id: undefined - [JournalEffect] Load Journal Silent Failure',
-      timestamp: 1551438424787
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalEffect] Load Journal Silent',
-      timestamp: 1551438444787
-    },
-    {
-      type: 'warning',
-      message: 'DE with id: undefined - [JournalEffect] Load Journal Silent Failure',
-      timestamp: 1551438444800
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438457776
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438457948
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438458120
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalEffect] Load Journal Silent',
-      timestamp: 1551438464795
-    },
-    {
-      type: 'warning',
-      message: 'DE with id: undefined - [JournalEffect] Load Journal Silent Failure',
-      timestamp: 1551438464811
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalEffect] Load Journal Silent',
-      timestamp: 1551438484800
-    },
-    {
-      type: 'warning',
-      message: 'DE with id: undefined - [JournalEffect] Load Journal Silent Failure',
-      timestamp: 1551438484821
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalEffect] Load Journal Silent',
-      timestamp: 1551438504806
-    }
-"
-"   {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Load Journal',
-      timestamp: 1551438397852
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalEffects] Load Journal Success',
-      timestamp: 1551438398085
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [CandidateDetailsPage] Candidate details view did enter',
-      timestamp: 1551438403935
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Load Journal',
-      timestamp: 1551438404771
-    },
-    {
-      type: 'error',
-      message: 'DE with id: undefined - [JournalEffects] Load Journal Failure',
-      timestamp: 1551438404844
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438406932
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438407358
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438408626
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438408773
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438410602
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438411201
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438411661
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438412977
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438413305
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438413468
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438414805
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438414961
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438415125
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438416258
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438416414
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438416569
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438424122
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438424262
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Next Day',
-      timestamp: 1551438424541
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalEffect] Load Journal Silent',
-      timestamp: 1551438424778
-    },
-    {
-      type: 'warning',
-      message: 'DE with id: undefined - [JournalEffect] Load Journal Silent Failure',
-      timestamp: 1551438424787
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalEffect] Load Journal Silent',
-      timestamp: 1551438444787
-    },
-    {
-      type: 'warning',
-      message: 'DE with id: undefined - [JournalEffect] Load Journal Silent Failure',
-      timestamp: 1551438444800
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438457776
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438457948
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalPage] Select Previous Day',
-      timestamp: 1551438458120
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalEffect] Load Journal Silent',
-      timestamp: 1551438464795
-    },
-    {
-      type: 'warning',
-      message: 'DE with id: undefined - [JournalEffect] Load Journal Silent Failure',
-      timestamp: 1551438464811
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalEffect] Load Journal Silent',
-      timestamp: 1551438484800
-    },
-    {
-      type: 'warning',
-      message: 'DE with id: undefined - [JournalEffect] Load Journal Silent Failure',
-      timestamp: 1551438484821
-    },
-    {
-      type: 'info',
-      message: 'DE with id: undefined - [JournalEffect] Load Journal Silent',
-      timestamp: 1551438504806
-    }
-"
+"	{
+""type"": ""info"",
+""message"": ""DE with id: 47182032 - [JournalPage] Load Journal"",
+""timestamp"": 1552907770000
+},	
+{
+""type"": ""info"",
+""message"": ""DE with id: 47182032 - [JournalPage] Load Journal"",
+""timestamp"": 1552907770000
+},
+{
+""type"": ""info"",
+""message"": ""DE with id: 47182032 - [JournalPage] Load Journal"",
+""timestamp"": 1552907770000
+	{
+""type"": ""info"",
+""message"": ""DE with id: 47182032 - [JournalPage] Load Journal"",
+""timestamp"": 1552907770000
+},	
+{
+""type"": ""info"",
+""message"": ""DE with id: 47182032 - [JournalPage] Load Journal"",
+""timestamp"": 1552907770000
+},
+{
+""type"": ""info"",
+""message"": ""DE with id: 47182032 - [JournalPage] Load Journal"",
+""timestamp"": 1552907770000
+}"
+"{
+""type"": ""info"",
+""message"": ""DE with id: 47182032 - [JournalPage] Load Journal"",
+""timestamp"": 1552907770000
+}"
+"{
+""type"": ""info"",
+""message"": ""DE with id: 47182032 - [JournalPage] Load Journal"",
+""timestamp"": 1552907770000
+}"
