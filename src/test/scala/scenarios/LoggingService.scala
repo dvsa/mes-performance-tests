@@ -17,7 +17,6 @@ class LoggingService extends Simulation {
   private val token = System.getenv("AD_JWT_TOKEN")
 
   // csv feeder currently not working csv file stored in test/resources
-  val errorLog = csv("errorLog.csv").circular
   val headers_10 = Map("Content-Type" -> """application/json""", "Authorization" -> token)
 
   //values for scenario
@@ -27,6 +26,7 @@ class LoggingService extends Simulation {
   //values for setUp phase
   private val maxUsers = System.getenv("NO_USERS").toInt
   private val maxDuration = System.getenv("JOB_DURATION").toInt
+  private val rampUpDuration = System.getenv("RAMP_UP_TIME").toInt
   private val waitTime = 1
 
   val httpProtocol: HttpProtocolBuilder = http
@@ -37,22 +37,20 @@ class LoggingService extends Simulation {
 
   val scn: ScenarioBuilder = scenario("Send_Logs")
       .forever("Send_Logs", exitASAP = true) {
-        feed(errorLog)
           .exec(http("Send_Logs")
             .post(uri)
             .headers(headers_10)
-            .body(StringBody("[" + "${logs}" + "]"))
-            .check(status.is(200)))
+          .body(StringBody("""[{"type": "info","message": "DE with id: 47182032 - [JournalPage] Load Journal Test","timestamp": 1552994170000}]"""))
+          .check(status.is(200),
+            substring("received and saved.")))
       }
 
 
   //Setup for users and maximum run time values
-  setUp(
-    scn
-      .inject(
-        nothingFor(waitTime),
-        atOnceUsers(maxUsers)))
+  setUp(scn
+    .inject(
+      rampConcurrentUsers(0) to(maxUsers) during(rampUpDuration)))
     .assertions(
-      global.successfulRequests.percent.gt(90))
+      global.successfulRequests.percent.gt(95))
     .maxDuration(FiniteDuration.apply(maxDuration, TimeUnit.SECONDS))
 }
