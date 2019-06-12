@@ -42,7 +42,7 @@ class LoggingService extends Simulation {
             .post(uri)
             .headers(headers_10)
           .body(StringBody(
-                               ""[{
+                               """[{
                                "type": "info",
                                "message": "DE with id: 47182032 - [JournalPage] Load Journal Test",
                                "timestamp": 1552994170000
@@ -61,7 +61,7 @@ class LoggingService extends Simulation {
                                "type": "info",
                                "message": "DE with id: 47182032 - [JournalPage] Load Journal Test",
                                "timestamp": 1552994170000
-                               }]""
+                               }]"""
                            ))
           .check(status.is(200),
             substring("received and saved.")))
