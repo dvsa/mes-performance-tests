@@ -15,9 +15,10 @@ class LoggingService extends Simulation {
 
   //setting authorisation token --Temporary Solution--
   private val token = System.getenv("AD_JWT_TOKEN")
+    private val api_key = System.getenv("X_API_KEY_LOGGING")
 
   // csv feeder currently not working csv file stored in test/resources
-  val headers_10 = Map("Content-Type" -> """application/json""", "Authorization" -> token)
+  val headers_10 = Map("Content-Type" -> """application/json""", "x-api-key" -> api_key, "Authorization" -> token)
 
   //values for scenario
   private val baseUrl = System.getenv("BASE_URL")
