@@ -45,22 +45,22 @@ class LoggingService extends Simulation {
                                """[{
                                "type": "info",
                                "message": "DE with id: 47182032 - [JournalPage] Load Journal Test",
-                               "timestamp": 1552994170000
+                               "timestamp": 1560348208000
                                },
                                {
                                "type": "info",
                                "message": "DE with id: 47182032 - [JournalPage] Load Journal Test",
-                               "timestamp": 1552994170000
+                               "timestamp": 1560348208000
                                },
                                {
                                "type": "info",
                                "message": "DE with id: 47182032 - [JournalPage] Load Journal Test",
-                               "timestamp": 1552994170000
+                               "timestamp": 1560348208000
                                },
                                {
                                "type": "info",
                                "message": "DE with id: 47182032 - [JournalPage] Load Journal Test",
-                               "timestamp": 1552994170000
+                               "timestamp": 1560348208000
                                }]"""
                            ))
           .check(status.is(200),
