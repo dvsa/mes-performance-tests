@@ -18,7 +18,7 @@ class LoggingService extends Simulation {
     private val api_key = System.getenv("X_API_KEY_LOGGING")
 
   // csv feeder currently not working csv file stored in test/resources
-  val headers_10 = Map("Content-Type" -> """application/json""", "x-api-key" -> api_key, "Authorization" -> token)
+  val headers_10 = Map("Content-Type" -> """application/json""", "x-api-key" -> api_key)
 
   //values for scenario
   private val baseUrl = System.getenv("BASE_URL")
@@ -41,7 +41,7 @@ class LoggingService extends Simulation {
           exec(http("Send_Logs")
             .post(uri)
             .headers(headers_10)
-          .body(StringBody("""[{
+          .body(StringBody([{
                                "type": "info",
                                "message": "DE with id: 47182032 - [JournalPage] Load Journal Test",
                                "timestamp": 1552994170000
@@ -59,8 +59,8 @@ class LoggingService extends Simulation {
                                "type": "info",
                                "message": "DE with id: 47182032 - [JournalPage] Load Journal Test",
                                "timestamp": 1552994170000
-                               },]
-                           """))
+                               }]
+                           ))
           .check(status.is(200),
             substring("received and saved.")))
       }
