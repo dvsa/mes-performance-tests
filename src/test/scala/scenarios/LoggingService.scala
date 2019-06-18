@@ -72,5 +72,5 @@ class LoggingService extends Simulation {
     reachRps(5) in (1),
     holdFor(1),
     jumpToRps(8),
-    holdFor(11 minutes))
+    holdFor(11))
 }
