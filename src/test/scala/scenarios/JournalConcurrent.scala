@@ -60,10 +60,12 @@ class JournalConcurrent extends Simulation {
 
   // setUp section allows to change ramp up and sets maximum duration of the test
   // max number of users achieved in set amount of time then simulation runs on loop until maxDuration expires
-setUp(scn
-  .inject(
-    rampConcurrentUsers(0) to(maxUsers) during(rampUpDuration)))
-  .assertions(
-    global.successfulRequests.percent.gt(95))
-  .maxDuration(FiniteDuration.apply(maxDuration, TimeUnit.SECONDS))
+  setUp(scn
+    .inject(constantUsersPerSec(maxUsers) during (rampUpDuration)))
+    .throttle(
+      reachRps(9) in (rampUpDuration),
+      holdFor(maxDuration))
+    .maxDuration(FiniteDuration.apply(maxDuration, TimeUnit.SECONDS))
+    .assertions(
+      global.successfulRequests.percent.gt(90))
 }
