@@ -15,7 +15,7 @@ class LoggingService extends Simulation {
 
   //setting authorisation token --Temporary Solution--
   private val token = System.getenv("AD_JWT_TOKEN")
-    private val api_key = System.getenv("X_API_KEY_LOGGING")
+  private val api_key = System.getenv("X_API_KEY_LOGGING")
 
   // csv feeder currently not working csv file stored in test/resources
   val headers_10 = Map("Content-Type" -> """application/json""", "x-api-key" -> api_key)
@@ -41,39 +41,36 @@ class LoggingService extends Simulation {
           exec(http("Send_Logs")
             .post(uri)
             .headers(headers_10)
-          .body(StringBody(
-                               """[{
+          .body(StringBody("""[{
                                "type": "info",
                                "message": "DE with id: 47182032 - [JournalPage] Load Journal Test",
-                               "timestamp": 1560348208000
+                               "timestamp": 1552994170000
                                },
                                {
                                "type": "info",
                                "message": "DE with id: 47182032 - [JournalPage] Load Journal Test",
-                               "timestamp": 1560348208000
+                               "timestamp": 1552994170000
                                },
                                {
                                "type": "info",
                                "message": "DE with id: 47182032 - [JournalPage] Load Journal Test",
-                               "timestamp": 1560348208000
+                               "timestamp": 1552994170000
                                },
                                {
                                "type": "info",
                                "message": "DE with id: 47182032 - [JournalPage] Load Journal Test",
-                               "timestamp": 1560348208000
-                               }]"""
-                           ))
+                               "timestamp": 1552994170000
+                               }]
+                           """))
           .check(status.is(200),
-            substring("received and saved.")))
+            substring("4 log messages were received and saved.")))
       }
 
 
   //Setup for users and maximum run time values
-  setUp(scn
-    .inject(
-      rampConcurrentUsers(0) to(maxUsers) during(rampUpDuration)))
-    .assertions(
-      global.successfulRequests.percent.gt(95))
-    .maxDuration(FiniteDuration.apply(maxDuration, TimeUnit.SECONDS))
+  setUp(scn.inject(constantUsersPerSec(5) during (1 minutes))).throttle(
+    reachRps(5) in (10 seconds),
+    holdFor(1 minute),
+    jumpToRps(8),
+    holdFor(11 minutes))
 }
-
