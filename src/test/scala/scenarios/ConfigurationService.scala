@@ -47,9 +47,11 @@ class ConfigurationService extends Simulation {
 
   //Setup for users and maximum run time values
   setUp(scn
-    .inject(
-      rampConcurrentUsers(0) to(maxUsers) during(rampUpDuration)))
-    .assertions(
-      global.successfulRequests.percent.gt(95))
+    .inject(constantUsersPerSec(maxUsers) during (rampUpDuration)))
+    .throttle(
+      reachRps(9) in (rampUpDuration),
+      holdFor(maxDuration))
     .maxDuration(FiniteDuration.apply(maxDuration, TimeUnit.SECONDS))
+    .assertions(
+      global.successfulRequests.percent.gt(90))
 }
