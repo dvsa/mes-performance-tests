@@ -68,7 +68,7 @@ class LoggingService extends Simulation {
 
 
   //Setup for users and maximum run time values
-  setUp(scn.inject(constantUsersPerSec(5) during (1 minutes))).throttle(
+  setUp(scn.inject(constantUsersPerSec(5) during (1))).throttle(
     reachRps(5) in (1),
     holdFor(1),
     jumpToRps(8),
