@@ -50,6 +50,7 @@ class ConfigurationService extends Simulation {
           substring("journalUrl")))
     }
 
+
   // setUp section allows to change ramp up and sets maximum duration of the test
   // simulation will hold given requests per second and  runs on loop until maxDuration expires
   setUp(scn
