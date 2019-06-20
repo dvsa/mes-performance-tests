@@ -13,22 +13,29 @@ import scala.concurrent.duration.{Duration, FiniteDuration}
 
 class LoggingService extends Simulation {
 
-  //setting authorisation token --Temporary Solution--
-  private val token = System.getenv("AD_JWT_TOKEN")
+  // setting authorisation token -- disabled, API key only required --
+  // private val token = System.getenv("AD_JWT_TOKEN")
+  // private API key
   private val api_key = System.getenv("X_API_KEY_LOGGING")
 
   // csv feeder currently not working csv file stored in test/resources
-  val headers_10 = Map("Content-Type" -> """application/json""", "x-api-key" -> api_key)
+  val headers = Map("Content-Type" -> """application/json""", "x-api-key" -> api_key)
 
   //values for scenario
   private val baseUrl = System.getenv("BASE_URL")
   private val uri = baseUrl + "logs"
   private val contentType = "application/json"
-  //values for setUp phase
+
+  // values for setUp phase
+
+  // max users used at once in scenario
   private val maxUsers = System.getenv("NO_USERS").toInt
-  private val maxDuration = System.getenv("JOB_DURATION").toInt
+  // time to ramp up users to full capacity (seconds)
   private val rampUpDuration = System.getenv("RAMP_UP_TIME").toInt
-  private val waitTime = 1
+  // duration of test run (seconds)
+  private val maxDuration = System.getenv("JOB_DURATION").toInt
+  // requests per second
+  private val requestPerSecond = System.getenv("REQUEST_SECOND").toInt
 
   val httpProtocol: HttpProtocolBuilder = http
     .baseUrl(baseUrl)
@@ -40,7 +47,8 @@ class LoggingService extends Simulation {
       .forever("Send_Logs", exitASAP = true) {
           exec(http("Send_Logs")
             .post(uri)
-            .headers(headers_10)
+            .headers(headers)
+            // 600 KB of journal logs data
           .body(StringBody("""[{
                                "type": "info",
                                "message": "DE with id: 47182032 - [JournalPage] Load Journal Test",
@@ -62,17 +70,21 @@ class LoggingService extends Simulation {
                                "timestamp": 1552994170000
                                }]
                            """))
+            // assertion
           .check(status.is(200),
             substring("4 log messages were received and saved.")))
       }
 
 
-  //Setup for users and maximum run time values
-  setUp(scn.inject(constantUsersPerSec(maxUsers) during (rampUpDuration)))
+  // setUp section allows to change ramp up and sets maximum duration of the test
+  // simulation will hold given requests per second and  runs on loop until maxDuration expires
+  setUp(scn
+    .inject(constantUsersPerSec(maxUsers) during (rampUpDuration))) //
     .throttle(
-    reachRps(9) in (rampUpDuration),
+    reachRps(requestPerSecond) in (rampUpDuration),
     holdFor(maxDuration))
     .maxDuration(FiniteDuration.apply(maxDuration, TimeUnit.SECONDS))
+    // test will fail if more than 90% of requests don't pass validation checks
     .assertions(
-      global.successfulRequests.percent.gt(90))
+    global.successfulRequests.percent.gt(90))
 }

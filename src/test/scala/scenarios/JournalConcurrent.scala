@@ -1,6 +1,5 @@
 package scenarios
 
-import java.util.concurrent
 import java.util.concurrent.TimeUnit
 
 import io.gatling.core.Predef._
@@ -19,7 +18,7 @@ class JournalConcurrent extends Simulation {
   val headers = Map("Content-Type" -> """application/json""", "Authorization" -> token)
 
   //values for scenario
-  // csv feeder currently not working csv file stored in test/resources
+  // imports csv file and sets order of importing values
   val csvUser = csv("users.csv").circular
   private val baseUrl = System.getenv("BASE_URL")
   private val contentType = "application/json"

@@ -15,19 +15,23 @@ class ConfigurationService extends Simulation {
 
   //setting authorisation token --Temporary Solution--
   private val token = System.getenv("AD_JWT_TOKEN")
-
-  // csv feeder currently not working csv file stored in test/resources
-  val headers_10 = Map("Content-Type" -> """application/json""", "Authorization" -> token)
+  val headers = Map("Content-Type" -> """application/json""", "Authorization" -> token)
 
   //values for scenario
   private val baseUrl = System.getenv("BASE_URL")
   private val uri = baseUrl + "configuration/perf"
   private val contentType = "application/json"
-  //values for setUp phase
+
+  // values for setUp phase
+
+  // max users used at once in scenario
   private val maxUsers = System.getenv("NO_USERS").toInt
-  private val maxDuration = System.getenv("JOB_DURATION").toInt
+  // time to ramp up users to full capacity (seconds)
   private val rampUpDuration = System.getenv("RAMP_UP_TIME").toInt
-  private val waitTime = 1
+  // duration of test run (seconds)
+  private val maxDuration = System.getenv("JOB_DURATION").toInt
+  // requests per second
+  private val requestPerSecond = System.getenv("REQUEST_SECOND").toInt
 
   val httpProtocol: HttpProtocolBuilder = http
     .baseUrl(baseUrl)
@@ -36,22 +40,26 @@ class ConfigurationService extends Simulation {
     .contentTypeHeader(contentType)
 
   val scn: ScenarioBuilder = scenario("Get_Config")
+    // forever loop during test runtime
     .forever("Get_Config", exitASAP = true) {
       exec(http("Get_Config")
+
         .get(uri)
-        .headers(headers_10)
+        .headers(headers)
         .check(status.is(200),
           substring("journalUrl")))
     }
 
 
-  //Setup for users and maximum run time values
+  // setUp section allows to change ramp up and sets maximum duration of the test
+  // simulation will hold given requests per second and  runs on loop until maxDuration expires
   setUp(scn
-    .inject(constantUsersPerSec(maxUsers) during (rampUpDuration)))
+    .inject(constantUsersPerSec(maxUsers) during (rampUpDuration))) //
     .throttle(
-      reachRps(9) in (rampUpDuration),
-      holdFor(maxDuration))
+    reachRps(requestPerSecond) in (rampUpDuration),
+    holdFor(maxDuration))
     .maxDuration(FiniteDuration.apply(maxDuration, TimeUnit.SECONDS))
+    // test will fail if more than 90% of requests don't pass validation checks
     .assertions(
-      global.successfulRequests.percent.gt(90))
+    global.successfulRequests.percent.gt(90))
 }
