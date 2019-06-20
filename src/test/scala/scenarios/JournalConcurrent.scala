@@ -22,17 +22,18 @@ class JournalConcurrent extends Simulation {
   // csv feeder currently not working csv file stored in test/resources
   val csvUser = csv("users.csv").circular
   private val baseUrl = System.getenv("BASE_URL")
-  private val contentType = "application/json" // content type for httpProtocol
+  private val contentType = "application/json"
 
   // values for setUp phase
-  // wait before scenario ends (seconds)
-  private val waitTime = 1
+
   // max users used at once in scenario
   private val maxUsers = System.getenv("NO_USERS").toInt
   // time to ramp up users to full capacity (seconds)
   private val rampUpDuration = System.getenv("RAMP_UP_TIME").toInt
   // duration of test run (seconds)
   private val maxDuration = System.getenv("JOB_DURATION").toInt
+  // requests per second
+  private val requestPerSecond = System.getenv("REQUEST_SECOND").toInt
 
   val httpProtocol: HttpProtocolBuilder = http
     .baseUrl(baseUrl)
@@ -42,7 +43,7 @@ class JournalConcurrent extends Simulation {
 
   // executable scenario section
   val scn: ScenarioBuilder = scenario("Get_Journal")
-    // forever loop max duration can be found in setUp section
+    // forever loop during test runtime
     .forever("Get Journal", exitASAP = true) {
     // loads values from csv
     feed(csvUser)
@@ -59,13 +60,14 @@ class JournalConcurrent extends Simulation {
 
 
   // setUp section allows to change ramp up and sets maximum duration of the test
-  // max number of users achieved in set amount of time then simulation runs on loop until maxDuration expires
+  // simulation will hold given requests per second and  runs on loop until maxDuration expires
   setUp(scn
-    .inject(constantUsersPerSec(maxUsers) during (rampUpDuration)))
+    .inject(constantUsersPerSec(maxUsers) during (rampUpDuration))) //
     .throttle(
-      reachRps(9) in (rampUpDuration),
+      reachRps(requestPerSecond) in (rampUpDuration),
       holdFor(maxDuration))
     .maxDuration(FiniteDuration.apply(maxDuration, TimeUnit.SECONDS))
+    // test will fail if more than 90% of requests don't pass validation checks
     .assertions(
       global.successfulRequests.percent.gt(90))
 }
