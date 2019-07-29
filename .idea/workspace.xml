@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="73d7dc08-a223-4bb7-af32-0aa6d1911186" name="Default Changelist" comment="TestResultsPost with">
+    <list default="true" id="73d7dc08-a223-4bb7-af32-0aa6d1911186" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/scenarios/JournalConcurrent.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/scenarios/JournalConcurrent.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/scala/scenarios/TestResultsPost.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/scenarios/TestResultsPost.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/scala/scenarios/JournalConcurrent.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="44" column="12" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="12" />
+            <state relative-caret-position="690">
+              <caret line="46" column="17" lean-forward="true" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
               <folding>
                 <element signature="e#19#55#0" expanded="true" />
               </folding>
@@ -33,8 +31,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/scala/scenarios/TestResultsPost.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="54" lean-forward="true" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+            <state relative-caret-position="627">
+              <caret line="53" column="29" lean-forward="true" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
+              <folding>
+                <element signature="e#19#55#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/scenarios/LoggingService.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
               <folding>
                 <element signature="e#19#55#0" expanded="true" />
               </folding>
@@ -46,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/resources/results.csv">
           <provider selected="true" editor-type-id="csv-text-editor">
             <state relative-caret-position="15">
-              <caret line="1" column="2600" selection-start-line="1" selection-start-column="2600" selection-end-line="1" selection-end-column="2600" />
+              <caret line="1" column="2541" selection-start-line="1" selection-start-column="2541" selection-end-line="1" selection-end-column="2541" />
             </state>
           </provider>
           <provider editor-type-id="csv-table-editor">
@@ -72,6 +82,12 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>user</find>
+      <find>token</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -85,8 +101,8 @@
         <option value="$PROJECT_DIR$/src/test/scala/scenarios/Variables.java" />
         <option value="$PROJECT_DIR$/src/test/scala/scenarios/variables.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/scenarios/JournalConcurrent.scala" />
-        <option value="$PROJECT_DIR$/src/test/resources/results.csv" />
         <option value="$PROJECT_DIR$/src/test/scala/scenarios/TestResultsPost.scala" />
+        <option value="$PROJECT_DIR$/src/test/resources/results.csv" />
       </list>
     </option>
   </component>
@@ -242,7 +258,21 @@
       <option name="project" value="LOCAL" />
       <updated>1564407273565</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="token fixed">
+      <created>1564407520441</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1564407520441</updated>
+    </task>
+    <task id="LOCAL-00003" summary="csv file updated">
+      <created>1564407812909</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1564407812909</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -279,7 +309,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="TestResultsPost with test data sample" />
-    <option name="LAST_COMMIT_MESSAGE" value="TestResultsPost with test data sample" />
+    <MESSAGE value="token fixed" />
+    <MESSAGE value="csv file updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="csv file updated" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -311,16 +343,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/scenarios/LoggingService.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
-          <folding>
-            <element signature="e#19#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/errorLog.csv">
       <provider selected="true" editor-type-id="csv-text-editor" />
       <provider editor-type-id="csv-table-editor">
@@ -334,8 +356,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/scenarios/JournalConcurrent.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="44" column="12" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="12" />
+        <state relative-caret-position="690">
+          <caret line="46" column="17" lean-forward="true" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
+          <folding>
+            <element signature="e#19#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/scenarios/LoggingService.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
           <folding>
             <element signature="e#19#55#0" expanded="true" />
           </folding>
@@ -352,7 +384,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/resources/results.csv">
       <provider selected="true" editor-type-id="csv-text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="2600" selection-start-line="1" selection-start-column="2600" selection-end-line="1" selection-end-column="2600" />
+          <caret line="1" column="2541" selection-start-line="1" selection-start-column="2541" selection-end-line="1" selection-end-column="2541" />
         </state>
       </provider>
       <provider editor-type-id="csv-table-editor">
@@ -361,8 +393,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/scenarios/TestResultsPost.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="54" lean-forward="true" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+        <state relative-caret-position="627">
+          <caret line="53" column="29" lean-forward="true" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
           <folding>
             <element signature="e#19#55#0" expanded="true" />
           </folding>

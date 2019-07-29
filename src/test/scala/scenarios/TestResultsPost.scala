@@ -45,7 +45,7 @@ class TestResultsPost extends Simulation {
   val testServicePost: ScenarioBuilder = scenario("Test_Results_Post")
     .forever("Send_Logs", exitASAP = true) {
       feed(csvResults)
-      exec(http("Send_Logs")
+      .exec(http("Send_Logs")
         .post(uri)
         .headers(headers)
         // xxxxx KB of test result data
