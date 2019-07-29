@@ -1,17 +1,16 @@
 package scenarios
 
 import java.util.concurrent.TimeUnit
-
 import io.gatling.core.Predef._
 import io.gatling.core.scenario.Simulation
 import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef._
 import io.gatling.http.protocol.HttpProtocolBuilder
-
 import scala.concurrent.duration.{Duration, FiniteDuration}
 
 
 class JournalConcurrent extends Simulation {
+
 
   //setting authorisation token --Temporary Solution--
   private val token = System.getenv("AD_JWT_TOKEN")
@@ -41,7 +40,7 @@ class JournalConcurrent extends Simulation {
     .contentTypeHeader(contentType)
 
   // executable scenario section
-  val scn: ScenarioBuilder = scenario("Get_Journal")
+  val getJournal: ScenarioBuilder = scenario("Get_Journal")
     // forever loop during test runtime
     .forever("Get Journal", exitASAP = true) {
     // loads values from csv
@@ -58,9 +57,10 @@ class JournalConcurrent extends Simulation {
   }
 
 
+
   // setUp section allows to change ramp up and sets maximum duration of the test
   // simulation will hold given requests per second and  runs on loop until maxDuration expires
-  setUp(scn
+  setUp(getJournal
     .inject(constantUsersPerSec(maxUsers) during (rampUpDuration))) //
     .throttle(
       reachRps(requestPerSecond) in (rampUpDuration),
