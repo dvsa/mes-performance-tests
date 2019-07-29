@@ -43,9 +43,9 @@ class TestResultsPost extends Simulation {
     .contentTypeHeader(contentType)
 
   val testServicePost: ScenarioBuilder = scenario("Test_Results_Post")
-    .forever("Send_Logs", exitASAP = true) {
+    .forever("Send_Test_Results", exitASAP = true) {
       feed(csvResults, 1)
-      .exec(http("Send_Logs")
+      .exec(http("Send_Test_Results")
         .post(uri)
         .headers(headers)
         // xxxxx KB of test result data

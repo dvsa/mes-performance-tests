@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="73d7dc08-a223-4bb7-af32-0aa6d1911186" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/scala/scenarios/TestResultsPost.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/scala/scenarios/TestResultsPost.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/scala/scenarios/TestResultsPost.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="53" column="29" lean-forward="true" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
+            <state relative-caret-position="550">
+              <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
               <folding>
                 <element signature="e#19#55#0" expanded="true" />
               </folding>
@@ -52,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/resources/results.csv">
           <provider selected="true" editor-type-id="csv-text-editor">
             <state relative-caret-position="15">
-              <caret line="1" column="2541" selection-start-line="1" selection-start-column="2541" selection-end-line="1" selection-end-column="2541" />
+              <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
             </state>
           </provider>
           <provider editor-type-id="csv-table-editor">
@@ -101,8 +102,8 @@
         <option value="$PROJECT_DIR$/src/test/scala/scenarios/Variables.java" />
         <option value="$PROJECT_DIR$/src/test/scala/scenarios/variables.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/scenarios/JournalConcurrent.scala" />
-        <option value="$PROJECT_DIR$/src/test/scala/scenarios/TestResultsPost.scala" />
         <option value="$PROJECT_DIR$/src/test/resources/results.csv" />
+        <option value="$PROJECT_DIR$/src/test/scala/scenarios/TestResultsPost.scala" />
       </list>
     </option>
   </component>
@@ -272,7 +273,21 @@
       <option name="project" value="LOCAL" />
       <updated>1564407812909</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="updating chain of actions">
+      <created>1564408323540</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1564408323540</updated>
+    </task>
+    <task id="LOCAL-00005" summary="updating feeder element identification">
+      <created>1564408734533</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1564408734533</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -311,7 +326,9 @@
     <MESSAGE value="TestResultsPost with test data sample" />
     <MESSAGE value="token fixed" />
     <MESSAGE value="csv file updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="csv file updated" />
+    <MESSAGE value="updating chain of actions" />
+    <MESSAGE value="updating feeder element identification" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating feeder element identification" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -381,24 +398,24 @@
       </provider>
       <provider editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/results.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="2541" selection-start-line="1" selection-start-column="2541" selection-end-line="1" selection-end-column="2541" />
-        </state>
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala/scenarios/TestResultsPost.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="53" column="29" lean-forward="true" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
+        <state relative-caret-position="550">
+          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
           <folding>
             <element signature="e#19#55#0" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/results.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
   </component>
