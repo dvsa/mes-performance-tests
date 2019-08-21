@@ -43,7 +43,6 @@ class ConfigurationService extends Simulation {
     // forever loop during test runtime
     .forever("Get_Config", exitASAP = true) {
       exec(http("Get_Config")
-
         .get(uri)
         .headers(headers)
         .check(status.is(200),

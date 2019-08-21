@@ -52,22 +52,22 @@ class LoggingService extends Simulation {
           .body(StringBody("""[{
                                "type": "info",
                                "message": "DE with id: 47182032 - [JournalPage] Load Journal Test",
-                               "timestamp": 1552994170000
+                               "timestamp": 1566389420000
                                },
                                {
                                "type": "info",
                                "message": "DE with id: 47182032 - [JournalPage] Load Journal Test",
-                               "timestamp": 1552994170000
+                               "timestamp": 1566389420000
                                },
                                {
                                "type": "info",
                                "message": "DE with id: 47182032 - [JournalPage] Load Journal Test",
-                               "timestamp": 1552994170000
+                               "timestamp": 1566389420000
                                },
                                {
                                "type": "info",
                                "message": "DE with id: 47182032 - [JournalPage] Load Journal Test",
-                               "timestamp": 1552994170000
+                               "timestamp": 1566389420000
                                }]
                            """))
             // assertion
