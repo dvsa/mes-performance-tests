@@ -13,14 +13,15 @@ import scala.concurrent.duration.{Duration, FiniteDuration}
 
 class ConfigurationService extends Simulation {
 
-  //setting authorisation token --Temporary Solution--
+  //setting authorisation token
   private val token = System.getenv("AD_JWT_TOKEN")
   val headers = Map("Content-Type" -> """application/json""", "Authorization" -> token)
 
   //values for scenario
-  private val baseUrl = "?app_version=" + System.getenv("BASE_URL")
+  private val baseUrl = System.getenv("BASE_URL")
+  // version of the app that cannot be lover that version of microservices
   private val app_version = System.getenv("APP_VERSION")
-  private val uri = baseUrl + "configuration/perf" + app_version
+  private val uri = baseUrl + "configuration/perf" + "?app_version=" + app_version
   private val contentType = "application/json"
 
   // values for setUp phase

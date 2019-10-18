@@ -12,7 +12,7 @@ import scala.concurrent.duration.{Duration, FiniteDuration}
 class JournalConcurrent extends Simulation {
 
 
-  //setting authorisation token --Temporary Solution--
+  //setting authorisation token
   private val token = System.getenv("AD_JWT_TOKEN")
   val headers = Map("Content-Type" -> """application/json""", "Authorization" -> token)
 
