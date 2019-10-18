@@ -18,8 +18,9 @@ class ConfigurationService extends Simulation {
   val headers = Map("Content-Type" -> """application/json""", "Authorization" -> token)
 
   //values for scenario
-  private val baseUrl = System.getenv("BASE_URL")
-  private val uri = baseUrl + "configuration/perf"
+  private val baseUrl = "?app_version=" + System.getenv("BASE_URL")
+  private val app_version = System.getenv("APP_VERSION")
+  private val uri = baseUrl + "configuration/perf" + app_version
   private val contentType = "application/json"
 
   // values for setUp phase
