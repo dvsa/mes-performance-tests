@@ -145,7 +145,6 @@
     <option name="width" value="1629" />
     <option name="height" value="1027" />
   </component>
-  <component name="ProjectId" id="1bwRni6NAtLrwmuZG34A3u2X3MG" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -202,7 +201,6 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551453831131" />
   </component>
   <component name="RunDashboard">
