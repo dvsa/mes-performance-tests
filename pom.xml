@@ -26,7 +26,7 @@
       <dependency>
           <groupId>io.gatling</groupId>
           <artifactId>gatling-http</artifactId>
-          <version>3.0.3</version>
+          <version>3.5.1</version>
       </dependency>
 
   </dependencies>
